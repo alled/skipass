@@ -16,6 +16,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name="com.example.skipass.app.LoginActivity" android:theme="@style/AppTheme.Dark" />
+        <activity android:name="com.example.skipass.app.SignupActivity" android:theme="@style/AppTheme.Dark" />
     </application>
 
 </manifest>

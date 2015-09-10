@@ -1,8 +1,9 @@
 package com.example.skipass.app;
 
+import android.content.Intent;
+import android.os.Bundle;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarActivity;
-import android.os.Bundle;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -115,6 +116,8 @@ public class MainActivity extends ActionBarActivity {
         }*/
 
         if (id == R.id.login) {
+            Intent intent = new Intent(this, LoginActivity.class);
+            startActivity(intent);
             return true;
         }
 
