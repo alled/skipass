@@ -20,11 +20,13 @@ public class MainActivity extends ActionBarActivity {
 
     /*String TITLES[] = {"Home","Events","Mail","Shop","Travel"};
     int ICONS[] = {R.drawable.ic_home,R.drawable.ic_events,R.drawable.ic_mail,R.drawable.ic_shop,R.drawable.ic_travel};*/
-    String TITLES[] = {"Your Ski-passes","Ski Resorts","Feedback"};
+    //String TITLES[] = {"Your Ski-passes","Ski Resorts","Feedback"};
+    private String[] mTITLES;
     int ICONS[] = {R.drawable.pass,R.drawable.flag,R.drawable.feedback};
 
     //Similarly we Create a String Resource for the name and email in the header view
     //And we also create a int resource for profile picture in the header view
+
 
     String NAME = "Alled";
     String EMAIL = "alyosha.vol92@gmail.com";
@@ -47,6 +49,8 @@ public class MainActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        mTITLES = getResources().getStringArray(R.array.TITLES);
+
     /* Assinging the toolbar object ot the view
     and setting the the Action bar to our toolbar
      */
@@ -60,7 +64,7 @@ public class MainActivity extends ActionBarActivity {
 
         mRecyclerView.setHasFixedSize(true);                            // Letting the system know that the list objects are of fixed size
 
-        mAdapter = new MyAdapter(TITLES,ICONS,NAME,EMAIL,PROFILE);       // Creating the Adapter of MyAdapter class(which we are going to see in a bit)
+        mAdapter = new MyAdapter(mTITLES,ICONS,NAME,EMAIL,PROFILE);       // Creating the Adapter of MyAdapter class(which we are going to see in a bit)
         // And passing the titles,icons,header view name, header view email,
         // and header view profile picture
 
@@ -94,6 +98,8 @@ public class MainActivity extends ActionBarActivity {
         mDrawerToggle.syncState();               // Finally we set the drawer toggle sync State
 
     }
+
+
 
 
     @Override
