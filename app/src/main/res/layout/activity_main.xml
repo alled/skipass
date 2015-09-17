@@ -9,36 +9,25 @@
         android:elevation="7dp">
 
 
-    <LinearLayout
+    <!-- As the main content view, the view below consumes the entire
+         space available using match_parent in both dimensions. -->
+    <FrameLayout
+            android:id="@+id/content_frame"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
-
+            android:layout_height="match_parent">
 
         <include
                 android:id="@+id/tool_bar"
                 layout="@layout/tool_bar">
         </include>
+    </FrameLayout>
 
-        <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Map" />
-
-    </LinearLayout>
-
-
-    <android.support.v7.widget.RecyclerView
-            android:id="@+id/RecyclerView"
-            android:layout_width="320dp"
-            android:layout_height="match_parent"
-            android:layout_gravity="left"
-
-            android:background="#ffffff"
-            android:scrollbars="vertical">
-
-    </android.support.v7.widget.RecyclerView>
-
+    <!-- android:layout_gravity="start" tells DrawerLayout to treat
+         this as a sliding drawer on the left side for left-to-right
+         languages and on the right side for right-to-left languages.
+         The drawer is given a fixed width in dp and extends the full height of
+         the container. A solid background is used for contrast
+         with the content view. -->
     <ListView
             android:id="@+id/left_drawer"
             android:layout_width="240dp"
@@ -48,6 +37,20 @@
             android:divider="@android:color/transparent"
             android:dividerHeight="0dp"
             android:background="#111"/>
+
+
+    <!--<android.support.v7.widget.RecyclerView
+            android:id="@+id/RecyclerView"
+            android:layout_width="320dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="left"
+
+            android:background="#ffffff"
+            android:scrollbars="vertical">
+
+    </android.support.v7.widget.RecyclerView>-->
+
+
 
 
 </android.support.v4.widget.DrawerLayout>

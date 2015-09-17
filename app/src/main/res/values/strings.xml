@@ -7,6 +7,7 @@
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string-array name="TITLES">
+        <item>Your Profile</item>
         <item>Your Ski-passes</item>
         <item>Ski Resorts</item>
         <item>Feedback</item>
