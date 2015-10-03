@@ -2,20 +2,18 @@ package com.example.skipass1;
 
 import android.app.Activity;
 import android.app.Fragment;
+import android.app.FragmentManager;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.v4.app.ActionBarDrawerToggle;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
-import android.view.View;
+import android.util.Log;
+import android.view.*;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.Toast;
 
 
 public class MainActivity extends Activity {
@@ -130,10 +128,50 @@ public class MainActivity extends Activity {
     }
 
     private void selectItem(int position) {
+
         // update the main content by replacing fragments
-        /*Fragment fragment = new PlanetFragment();
+
+        Fragment fragment = null;
+
+        switch (position) {
+            case 0:
+                fragment = new ResortsFragment();
+                break;
+            case 1:
+                fragment = new ProfileFragment();
+                break;
+            case 2:
+                fragment = new SkipassFragment();
+                break;
+            case 3:
+                fragment = new FeedbackFragment();
+                break;
+
+            default:
+                break;
+        }
+
+        if (fragment != null) {
+            FragmentManager fragmentManager = getFragmentManager();
+            fragmentManager.beginTransaction().replace(R.id.content_frame, fragment).commit();
+
+            // update selected item and title, then close the drawer
+            mDrawerList.setItemChecked(position, true);
+            mDrawerList.setSelection(position);
+            setTitle(mMenuTitles[position]);
+            mDrawerLayout.closeDrawer(mDrawerList);
+
+        } else {
+            // error in creating fragment
+            Log.e("MainActivity", "Error in creating fragment");
+        }
+    }
+
+    /*private void selectItem(int position) {
+        // update the main content by replacing fragments
+        Fragment fragment = new DisplayFragment();
         Bundle args = new Bundle();
-        args.putInt(PlanetFragment.ARG_PLANET_NUMBER, position);
+        args.putInt(DisplayFragment.ARG_ITEM_NUMBER, position);
         fragment.setArguments(args);
 
         FragmentManager fragmentManager = getFragmentManager();
@@ -142,10 +180,10 @@ public class MainActivity extends Activity {
         // update selected item and title, then close the drawer
         mDrawerList.setItemChecked(position, true);
         setTitle(mMenuTitles[position]);
-        mDrawerLayout.closeDrawer(mDrawerList);*/
+        mDrawerLayout.closeDrawer(mDrawerList);
 
-        Toast.makeText(getBaseContext(), "Pressed", Toast.LENGTH_LONG).show();
-    }
+        //Toast.makeText(getBaseContext(), "Pressed", Toast.LENGTH_LONG).show();
+    }*/
 
     @Override
     public void setTitle(CharSequence title) {
@@ -175,25 +213,25 @@ public class MainActivity extends Activity {
     /**
      * Fragment that appears in the "content_frame", shows a planet
      */
-    public static class PlanetFragment extends Fragment {
-        public static final String ARG_PLANET_NUMBER = "planet_number";
+    /*public static class DisplayFragment extends Fragment {
+        public static final String ARG_ITEM_NUMBER = "item_number";
 
-        public PlanetFragment() {
+        public DisplayFragment() {
             // Empty constructor required for fragment subclasses
         }
 
-        /*@Override
+        @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
-            View rootView = inflater.inflate(R.layout.fragment_planet, container, false);
-            int i = getArguments().getInt(ARG_PLANET_NUMBER);
-            String planet = getResources().getStringArray(R.array.planets_array)[i];
+            View rootView = inflater.inflate(R.layout.fragment_profile, container, false);
+            int i = getArguments().getInt(ARG_ITEM_NUMBER);
+            String item = getResources().getStringArray(R.array.menu_array)[i];
 
-            int imageId = getResources().getIdentifier(planet.toLowerCase(Locale.getDefault()),
+            *//*int imageId = getResources().getIdentifier(planet.toLowerCase(Locale.getDefault()),
                     "drawable", getActivity().getPackageName());
-            ((ImageView) rootView.findViewById(R.id.image)).setImageResource(imageId);
-            getActivity().setTitle(planet);
+            ((ImageView) rootView.findViewById(R.id.image)).setImageResource(imageId);*//*
+            getActivity().setTitle(item);
             return rootView;
-        }*/
-    }
+        }
+    }*/
 }
