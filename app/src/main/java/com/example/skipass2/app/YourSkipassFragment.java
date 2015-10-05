@@ -1,4 +1,4 @@
-package com.example.skipass1;
+package com.example.skipass2.app;
 
 import android.app.Fragment;
 import android.os.Bundle;
@@ -7,17 +7,17 @@ import android.view.View;
 import android.view.ViewGroup;
 
 /**
- * Created by Alyosha on 02.10.2015.
+ * Created by Alyosha on 04.10.2015.
  */
-public class FeedbackFragment extends Fragment {
+public class YourSkipassFragment extends Fragment {
 
-    public FeedbackFragment() {
+    public YourSkipassFragment() {
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-        View rootView = inflater.inflate(R.layout.fragment_feedback, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_skipass, container, false);
 
         return rootView;
     }
