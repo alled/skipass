@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         mDrawerList = (ListView) findViewById(R.id.left_drawer);
 
-        // set a custom shadow that overlays the main content when the drawer opens
+        // set a custom shadow that overlays the menu content when the drawer opens
         mDrawerLayout.setDrawerShadow(R.drawable.drawer_shadow, GravityCompat.START);
         // set up the drawer's list view with items and click listener
         mDrawerList.setAdapter(new ArrayAdapter<String>(this,
@@ -78,9 +78,9 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.main, menu);
+        inflater.inflate(R.menu.menu, menu);
         return super.onCreateOptionsMenu(menu);
-        /*getMenuInflater().inflate(R.menu.main, menu);
+        /*getMenuInflater().inflate(R.menu.menu, menu);
         return true;*/
     }
 
@@ -117,6 +117,10 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(this, LoginActivity.class);
                 startActivity(intent);
                 return true;
+            case R.id.contact:
+                Intent intent2 = new Intent(this, ContactActivity.class);
+                startActivity(intent2);
+                return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
@@ -132,7 +136,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void selectItem(int position) {
 
-        // update the main content by replacing fragments
+        // update the menu content by replacing fragments
 
         Fragment fragment = null;
 
@@ -145,9 +149,6 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case 2:
                 fragment = new YourSkipassesFragment();
-                break;
-            case 3:
-                fragment = new ContactFragment();
                 break;
 
             default:
