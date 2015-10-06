@@ -3,6 +3,7 @@ package com.example.skipass2.app;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.ListFragment;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -37,6 +38,8 @@ public class AvailableSkipassesFragment extends ListFragment {
             @Override
             public void onClick(View view) {
                 Toast.makeText(getActivity(), "add", Toast.LENGTH_LONG).show();
+                Intent intent = new Intent(getActivity(), AddSkipassActivity.class);
+                startActivity(intent);
             }
         });
 

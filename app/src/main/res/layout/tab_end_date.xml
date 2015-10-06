@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TableLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:shrinkColumns="true"
+            android:stretchColumns="1"
+            >
+
+        <TableRow android:layout_weight="3"
+                  android:layout_gravity="bottom|center_horizontal" >
+
+            <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center|bottom"
+                    android:layout_span="2"
+                    android:text="@string/end"
+                    android:textColor="@color/white"
+                    android:shadowDx="1"
+                    android:shadowDy="1"
+                    android:shadowRadius="2"
+                    android:textSize="20sp" />
+        </TableRow>
+
+        <TableRow android:layout_weight="1" >
+
+            <DatePicker
+                    android:id="@+id/datePicker2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:calendarViewShown="false"
+                    android:spinnersShown="true"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_span="2" />
+        </TableRow>
+
+        <!--<TableRow
+                android:id="@+id/linearLayout1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:orientation="vertical" >
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="1"
+                    android:layout_gravity="bottom|right"
+                    android:text="@string/Finish"
+                    />
+        </TableRow>-->
+
+        <TableRow
+                android:id="@+id/linearLayout1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:orientation="vertical" >
+
+
+        </TableRow>
+
+        <TableRow android:layout_weight="1" >
+
+            <Button
+                    android:id="@+id/button1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="0"
+                    android:layout_gravity="bottom|left"
+
+                    android:text="@string/back"
+                    android:onClick="GoToChooseDate" android:minWidth="90dp"/>
+
+            <Button
+                    android:id="@+id/button2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="1"
+                    android:layout_gravity="bottom|right"
+                    android:layout_span="3"
+
+
+                    android:text="@string/confirm"
+                    android:onClick="goNext" android:minWidth="90dp"/>
+
+        </TableRow>
+
+
+
+
+
+    </TableLayout>
+
+</RelativeLayout>
